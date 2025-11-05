@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zador Group – Coming Soon</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('zadorbackground.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      backdrop-filter: brightness(0.7);
+    }
+
+    .logo {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.2em;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+    }
+
+    .email-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .email-form input {
+      padding: 10px;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      width: 250px;
+      margin-bottom: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .email-form input::placeholder {
+      color: #eee;
+    }
+
+    .email-form input:hover,
+    .email-form input:focus {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: #ffcc00;
+      outline: none;
+    }
+
+    .email-form button {
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .email-form button:hover {
+      background-color: transparent;
+      border: 2px solid #ffcc00;
+      color: #ffcc00;
+    }
+
+    .whatsapp-button {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+      background-color: transparent;
+      border: 2px solid #25D366;
+      color: #25D366;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Zador Logo -->
+  <img src="zador-logo.png" alt="Zador Logo" class="logo" />
+
+  <!-- Headline -->
+  <h1>Zador Group</h1>
+  <p>Our website will soon be launched. Stay informed!</p>
+
+  <!-- Email Collection Form -->
+  <form action="https://formspree.io/f/xeokjqpd" method="POST" class="email-form">
+    <input type="email" name="email" placeholder="Enter your email" required />
+    <button type="submit">Notify Me</button>
+  </form>
+
+  <!-- WhatsApp Contact Button -->
+  <a class="whatsapp-button" href="https://wa.me/233593120884" target="_blank">
+    📱 Chat with Us on WhatsApp
+  </a>
+
+  <!-- Success Script -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const form = document.querySelector(".email-form");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" }
+        });
+
+        if (response.ok) {
+          form.innerHTML = "<p style='color:#ffcc00;'>Thank you! We'll keep you updated.</p>";
+        } else {
+          form.innerHTML = "<p style='color:red;'>Oops! Something went wrong. Try again later.</p>";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
