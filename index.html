@@ -1,147 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zador Group – Coming Soon</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-image: url('zadorbackground.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      backdrop-filter: brightness(0.7);
-    }
-
-    .logo {
-      width: 150px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.2em;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 2em;
-    }
-
-    .email-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .email-form input {
-      padding: 10px;
-      border: 2px solid transparent;
-      border-radius: 5px;
-      width: 250px;
-      margin-bottom: 10px;
-      background-color: rgba(255, 255, 255, 0.2);
-      color: white;
-      transition: all 0.3s ease;
-    }
-
-    .email-form input::placeholder {
-      color: #eee;
-    }
-
-    .email-form input:hover,
-    .email-form input:focus {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-color: #ffcc00;
-      outline: none;
-    }
-
-    .email-form button {
-      padding: 10px 20px;
-      background-color: #ffcc00;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .email-form button:hover {
-      background-color: transparent;
-      border: 2px solid #ffcc00;
-      color: #ffcc00;
-    }
-
-    .whatsapp-button {
-      margin-top: 30px;
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .whatsapp-button:hover {
-      background-color: transparent;
-      border: 2px solid #25D366;
-      color: #25D366;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zador Groups Limited</title>
+  <meta name="description" content="Zador Groups Limited — Excellence in Tech, Printing, and Logistics." />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="zador logo.png" />
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <img src="zador logo.png" alt="Zador Groups Logo" />
+      <h1>Zador Groups Limited</h1>
+    </div>
 
-  <!-- Zador Logo -->
-  <img src="zador-logo.png" alt="Zador Logo" class="logo" />
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <!-- Headline -->
-  <h1>Zador Group</h1>
-  <p>Our website will soon be launched. Stay informed!</p>
+  <!-- MAIN CONTENT -->
+  <main id="home">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <h2>Empowering Innovation Through Work and Vision</h2>
+      <p>At Zador, we combine technology, design, and reliability to move ideas forward.</p>
+      <button id="learnMore">Learn More</button>
+    </section>
 
-  <!-- Email Collection Form -->
-  <form action="https://formspree.io/f/xeokjqpd" method="POST" class="email-form">
-    <input type="email" name="email" placeholder="Enter your email" required />
-    <button type="submit">Notify Me</button>
-  </form>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="reveal">
+      <h3>About Us</h3>
+      <p>Zador Groups Limited delivers integrated solutions in technology, device repair,</p>
+      <p>creative design, and logistics. We operate with professionalism, innovation,</p>
+      <p>and integrity — ensuring sustainable value for clients and communities alike.</p>
+    </section>
 
-  <!-- WhatsApp Contact Button -->
-  <a class="whatsapp-button" href="https://wa.me/233593120884" target="_blank">
-    📱 Chat with Us on WhatsApp
-  </a>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services reveal">
+  <h2>Our Core Services</h2>
+  <div class="service-grid">
+    <div class="service">
+      <img src="phone repair and accessories.jpg" alt="Phone Repairs & Accessories">
+      <h3>Phone Repairs & Accessories</h3>
+    </div>
+    <div class="service">
+      <img src="Graphic Design & Printing.png" alt="Graphic Design & Printing">
+      <h3>Graphic Design & Printing</h3>
+    </div>
+    <div class="service">
+      <img src="Delivery & Dispatch Services.png" alt="Delivery & Dispatch Services">
+      <h3>Delivery & Dispatch Services</h3>
+    </div>
+    <div class="service">
+      <img src="ICT & Software Solutions.png" alt="ICT & Software Solutions">
+      <h3>ICT & Software Solutions</h3>
+    </div>
+  </div>
+</section>
 
-  <!-- Success Script -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const form = document.querySelector(".email-form");
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const data = new FormData(form);
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: data,
-          headers: { Accept: "application/json" }
-        });
 
-        if (response.ok) {
-          form.innerHTML = "<p style='color:#ffcc00;'>Thank you! We'll keep you updated.</p>";
-        } else {
-          form.innerHTML = "<p style='color:red;'>Oops! Something went wrong. Try again later.</p>";
-        }
-      });
-    });
-  </script>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="reveal">
+      <h3>Contact Us</h3>
+      <p>We’d love to hear from you. Reach out for collaborations, partnerships, or inquiries.</p>
+      <p>Email: <a href="mailto:info@zadorgroups.com">info@zadorgroups.com</a></p>
+      <p>Phone: +233 59 312 0884</p>
+    </section>
+  </main>
 
+  <!-- FOOTER -->
+  <footer class="reveal">
+    <p>&copy; <span id="year"></span> Zador Groups Limited. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
 </body>
 </html>
